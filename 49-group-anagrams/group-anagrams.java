@@ -3,11 +3,8 @@ class Solution {
         HashMap<String, List<String>> map = new HashMap<>();
 
         for(String s: strs){
-            int[] count = new int[26];
-
-            for(char c: s.toCharArray()){
-                count[c - 'a']++;
-            }
+            char[] count = s.toCharArray();
+            Arrays.sort(count);
 
             String key = Arrays.toString(count);
             map.putIfAbsent(key, new ArrayList<>());
